@@ -39,6 +39,9 @@
             this.ShowCLBtn = new System.Windows.Forms.Button();
             this.HideCLBtn = new System.Windows.Forms.Button();
             this.CoverLetterBox = new System.Windows.Forms.TextBox();
+            this.SkipBtn = new System.Windows.Forms.Button();
+            this.AcceptReplyBtn = new System.Windows.Forms.Button();
+            this.DeclineReplyBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -75,9 +78,7 @@
             // AcceptRadio
             // 
             resources.ApplyResources(this.AcceptRadio, "AcceptRadio");
-            this.AcceptRadio.Checked = true;
             this.AcceptRadio.Name = "AcceptRadio";
-            this.AcceptRadio.TabStop = true;
             this.AcceptRadio.UseVisualStyleBackColor = true;
             // 
             // DeclineRadio
@@ -106,10 +107,34 @@
             this.CoverLetterBox.Name = "CoverLetterBox";
             this.CoverLetterBox.ReadOnly = true;
             // 
+            // SkipBtn
+            // 
+            resources.ApplyResources(this.SkipBtn, "SkipBtn");
+            this.SkipBtn.Name = "SkipBtn";
+            this.SkipBtn.UseVisualStyleBackColor = true;
+            this.SkipBtn.Click += new System.EventHandler(this.SkipBtn_Click);
+            // 
+            // AcceptReplyBtn
+            // 
+            resources.ApplyResources(this.AcceptReplyBtn, "AcceptReplyBtn");
+            this.AcceptReplyBtn.Name = "AcceptReplyBtn";
+            this.AcceptReplyBtn.UseVisualStyleBackColor = true;
+            this.AcceptReplyBtn.Click += new System.EventHandler(this.AcceptReplyBtn_Click);
+            // 
+            // DeclineReplyBtn
+            // 
+            resources.ApplyResources(this.DeclineReplyBtn, "DeclineReplyBtn");
+            this.DeclineReplyBtn.Name = "DeclineReplyBtn";
+            this.DeclineReplyBtn.UseVisualStyleBackColor = true;
+            this.DeclineReplyBtn.Click += new System.EventHandler(this.DeclineReplyBtn_Click);
+            // 
             // ReplySelectionForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.DeclineReplyBtn);
+            this.Controls.Add(this.AcceptReplyBtn);
+            this.Controls.Add(this.SkipBtn);
             this.Controls.Add(this.DeclineRadio);
             this.Controls.Add(this.AcceptRadio);
             this.Controls.Add(this.label3);
@@ -132,7 +157,6 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button DatabaseGrabBtn;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RadioButton AcceptRadio;
@@ -140,6 +164,10 @@
         private System.Windows.Forms.Button ShowCLBtn;
         private System.Windows.Forms.Button HideCLBtn;
         private System.Windows.Forms.TextBox CoverLetterBox;
+        private System.Windows.Forms.Button SkipBtn;
+        private System.Windows.Forms.Button AcceptReplyBtn;
+        private System.Windows.Forms.Button DeclineReplyBtn;
+        private System.Windows.Forms.Label label2;
     }
 }
 
