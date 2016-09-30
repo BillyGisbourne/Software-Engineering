@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Prototype
 {
     public partial class DeclineReply : Form
     {
+        ReplySelectionForm replySelectionForm = new ReplySelectionForm();
+
         public DeclineReply()
         {
             InitializeComponent();
@@ -19,12 +15,12 @@ namespace Prototype
 
         private void DeclineReply_Load(object sender, EventArgs e)
         {
-            DeclineTextBox.Text = ReplySelectionForm.declineReply;
+            DeclineTextBox.Text = File.ReadAllText(replySelectionForm.declineRepliesLoc);
         }
 
         private void DeclineSaveBtn_Click(object sender, EventArgs e)
         {
-            ReplySelectionForm.declineReply = DeclineTextBox.Text;
+            File.WriteAllText(replySelectionForm.declineRepliesLoc, DeclineTextBox.Text);
             Hide();
         }
     }

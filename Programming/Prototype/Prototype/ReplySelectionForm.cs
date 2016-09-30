@@ -16,22 +16,25 @@ namespace Prototype
         /// <summary>
         /// PDF Location
         /// </summary>
-        private string PDFLoc = "pdf.txt";
+        private string pdfLoc = "pdf.txt";
+
+        private string jobRole = "Administrator";
+
+        /// <summary>
+        /// Location of where replies are stored //TODO: Change to database
+        /// </summary>
+        public string acceptRepliesLoc = "acceptReplies.txt";
+        public string declineRepliesLoc = "declineReplies.txt";
 
         /// <summary>
         /// Get designated for acceptReplies
         /// </summary>
         public string GetAcceptReply()
         {
-            string reply = "Dear " + label2.Text + ","
-                            + Environment.NewLine
-                            + Environment.NewLine +
-                            "We are pleased to accept you as blah blah blah..."
-                            + Environment.NewLine
-                            + Environment.NewLine +
-                            "Thanks,"
-                            + Environment.NewLine +
-                            "HappyTech";
+            string reply = File.ReadAllText(acceptRepliesLoc);
+
+            reply = ProcessReply(reply);
+
             return reply;
         }
 
@@ -40,15 +43,35 @@ namespace Prototype
         /// </summary>
         public string GetDeclineReply()
         {
-           string reply = "Dear " + label2.Text + ","
-                            + Environment.NewLine
-                            + Environment.NewLine +
-                            "We are sad to decline you as blah blah blah..."
-                            + Environment.NewLine
-                            + Environment.NewLine +
-                            "Sorry,"
-                            + Environment.NewLine +
-                            "HappyTech";
+            string reply = File.ReadAllText(declineRepliesLoc);
+
+            reply = ProcessReply(reply);
+
+            return reply;
+        }
+
+        /// <summary>
+        /// Changed all the Reply code to fit all the Applicant information
+        /// </summary>
+        /// <param name="reply">Input the reply (unformatted)</param>
+        /// <returns>Returns the reply (formatted)</returns>
+        private string ProcessReply(string reply)
+        {
+            if (reply.Contains("{NAME}") || reply.Contains("{name}"))
+            {
+                reply = reply.Replace("{NAME}", label2.Text);
+                reply = reply.Replace("{name}", label2.Text);
+            }
+            if (reply.Contains("{EMAIL}") || reply.Contains("{email}"))
+            {
+                reply = reply.Replace("{EMAIL}", label4.Text);
+                reply = reply.Replace("{email}", label4.Text);
+            }
+            if (reply.Contains("{ROLE}") || reply.Contains("{role}"))
+            {
+                reply = reply.Replace("{ROLE}", jobRole);
+                reply = reply.Replace("{role}", jobRole);
+            }
 
             return reply;
         }
@@ -82,24 +105,28 @@ namespace Prototype
         /// </summary>
         private void ReplyToApplicant()
         {
-            WriteToFile(PDFLoc, GetReplyString());
+            WriteToFile(pdfLoc, GetReplyString());
             NextApplicant();
             AcceptRadio.Checked = false;
             DeclineRadio.Checked = false;
         }
 
+        /// <summary>
+        /// Gets the desired reply string using checks
+        /// </summary>
+        /// <returns>Either Accept Reply or Decline Reply</returns>
         public string GetReplyString()
         {
             string reply = "";
 
             if (AcceptRadio.Checked == true)
             {
-                reply = acceptReply;
+                reply = GetAcceptReply();
             }
 
             if (DeclineRadio.Checked == true)
             {
-                reply = declineReply;
+                reply = GetDeclineReply();
             }
 
             return reply;
@@ -137,7 +164,7 @@ namespace Prototype
         /// </summary>
         private void SearchNextApplicant()
         {
-            if (File.ReadAllText(PDFLoc).Contains(label2.Text)) //Reads all the text from the PDF and searches for a name match
+            if (File.ReadAllText(pdfLoc).Contains(label2.Text)) //Reads all the text from the PDF and searches for a name match
             {
                 NextApplicant(); //Loops back to the Next Applicant
             }

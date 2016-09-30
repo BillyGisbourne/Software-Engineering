@@ -57,9 +57,10 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(315, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 39);
+            this.label1.Size = new System.Drawing.Size(127, 65);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Applicant Name: {NAME}\r\nApplicant Email: {EMAIL}\r\nApplicant Role: {ROLE}";
+            this.label1.Text = "Codes:\r\n\r\nApplicant Name: {NAME}\r\nApplicant Email: {EMAIL}\r\nApplicant Role: {ROLE" +
+    "}";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // DeclineReply
