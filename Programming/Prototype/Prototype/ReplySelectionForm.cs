@@ -167,7 +167,7 @@ namespace Prototype
             counter++;
             label2.Text = "Test" + counter; //TODO: Change to database 'First_Name' + 'Last_Name'
             label4.Text = "Test@hotmail.com" + counter; //TODO: Change to database 'Email'
-            CoverLetterBox.Text = ;//GenerateRandomString(); //TODO: Change to database 'Cover_Letter'
+            CoverLetterBox.Text = "";//GenerateRandomString(); //TODO: Change to database 'Cover_Letter'
             SearchNextApplicant();
         }
 
