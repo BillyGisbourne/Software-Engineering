@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Prototype
@@ -111,6 +112,17 @@ namespace Prototype
             DeclineRadio.Checked = false;
         }
 
+                                                                                        //public string GenerateRandomString()
+                                                                                        //{
+                                                                                        //    Random random = new Random();
+                                                                                        //    var chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+                                                                                        //    for (int i = chars.Length; i < 300; i++)
+                              //TODO                                                    //    {
+                                                                                        //        chars += chars;
+                                                                                        //    }
+                                                                                        //    return new string(chars.Select(c => chars[random.Next(chars.Length)]).Take(300).ToArray());
+                                                                                        //}
+
         /// <summary>
         /// Gets the desired reply string using checks
         /// </summary>
@@ -155,7 +167,7 @@ namespace Prototype
             counter++;
             label2.Text = "Test" + counter; //TODO: Change to database 'First_Name' + 'Last_Name'
             label4.Text = "Test@hotmail.com" + counter; //TODO: Change to database 'Email'
-            CoverLetterBox.Text = "Cover letter fill = " + label2.Text + label4.Text; //TODO: Change to database 'Cover_Letter'
+            CoverLetterBox.Text = ;//GenerateRandomString(); //TODO: Change to database 'Cover_Letter'
             SearchNextApplicant();
         }
 
