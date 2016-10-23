@@ -10,17 +10,21 @@ namespace Applicant_Reviewer
     {
         private bool invalid;
 
+        private string firstname;
+        private string lastname;
+        private int userRights;
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="email"></param>
         /// <param name="password"></param>
         /// <param name="userRights"></param>
-        internal void Login(string email, string password, int userRights)
+        internal void Login(string email, string password)
         {
             if (CheckDetails(email, password))
             {
-                CheckPrivileges(email, userRights);
+                CheckPrivileges(email, userRights);                
             }
         }
 
@@ -46,6 +50,11 @@ namespace Applicant_Reviewer
                                     select o;
                         if (query.SingleOrDefault() != null)
                         {
+                            var result = query.SingleOrDefault();
+                            firstname = result.firstname;
+                            lastname = result.lastname;
+                            userRights = result.rights;
+
                             correctLogin = true;
                         }
                         else
@@ -151,7 +160,7 @@ namespace Applicant_Reviewer
                     PositionOptions newPositionOptions = new PositionOptions();
                     newPositionOptions.Show();
                     newPositionOptions.CheckVisible(userRights);
-                    newPositionOptions.FillDetails(email, userRights);
+                    newPositionOptions.FillDetails(firstname, lastname, userRights);
                     break;
             }
         }

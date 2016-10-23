@@ -20,11 +20,11 @@ namespace Applicant_Reviewer
             LoginForm newLogin = new LoginForm();
         }
 
-        internal void FillDetails(string email, int rights)
+        internal void FillDetails(string firstname, string lastname, int rights)
         {
-            email = email.Split('@')[0];
-            email = email.First().ToString().ToUpper() + email.Substring(1);
-            showUser.Text += email;
+            //email = email.Split('@')[0];
+            //email = email.First().ToString().ToUpper() + email.Substring(1);
+            showUser.Text += firstname + " " + lastname;
 
             switch (rights)
             {
@@ -47,7 +47,8 @@ namespace Applicant_Reviewer
                 case 1:
                 case 2:
                     CreatePositionsBtn.Hide();
-                    ViewPositionsBtn.Size = new Size(444, 139);
+                    ViewPositionsBtn.Size = new Size(398, 117);
+                    ViewPositionsBtn.Location = new Point(23, 149);
                     break;
             }
         }

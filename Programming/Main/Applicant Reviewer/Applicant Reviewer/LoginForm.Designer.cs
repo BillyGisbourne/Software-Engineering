@@ -38,7 +38,7 @@ namespace Applicant_Reviewer
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(97, 148);
+            this.LoginButton.Location = new System.Drawing.Point(105, 148);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
             this.LoginButton.TabIndex = 3;
@@ -49,10 +49,10 @@ namespace Applicant_Reviewer
             // 
             this.EmailBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.EmailBox.CustomBackground = true;
-            this.EmailBox.Location = new System.Drawing.Point(49, 65);
+            this.EmailBox.Location = new System.Drawing.Point(23, 65);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.PromptText = "Email";
-            this.EmailBox.Size = new System.Drawing.Size(173, 23);
+            this.EmailBox.Size = new System.Drawing.Size(239, 23);
             this.EmailBox.TabIndex = 0;
             this.EmailBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -60,11 +60,11 @@ namespace Applicant_Reviewer
             // 
             this.PasswordBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.PasswordBox.CustomBackground = true;
-            this.PasswordBox.Location = new System.Drawing.Point(49, 95);
+            this.PasswordBox.Location = new System.Drawing.Point(23, 95);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.PasswordChar = '●';
             this.PasswordBox.PromptText = "Password";
-            this.PasswordBox.Size = new System.Drawing.Size(173, 23);
+            this.PasswordBox.Size = new System.Drawing.Size(239, 23);
             this.PasswordBox.TabIndex = 1;
             this.PasswordBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PasswordBox.UseSystemPasswordChar = true;
@@ -77,7 +77,7 @@ namespace Applicant_Reviewer
             this.ForgotPasswordLabel.CustomForeColor = true;
             this.ForgotPasswordLabel.FontSize = MetroFramework.MetroLabelSize.Small;
             this.ForgotPasswordLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.ForgotPasswordLabel.Location = new System.Drawing.Point(124, 121);
+            this.ForgotPasswordLabel.Location = new System.Drawing.Point(164, 121);
             this.ForgotPasswordLabel.Margin = new System.Windows.Forms.Padding(0);
             this.ForgotPasswordLabel.Name = "ForgotPasswordLabel";
             this.ForgotPasswordLabel.Size = new System.Drawing.Size(98, 15);
@@ -91,7 +91,7 @@ namespace Applicant_Reviewer
             this.AcceptButton = this.LoginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 185);
+            this.ClientSize = new System.Drawing.Size(285, 185);
             this.Controls.Add(this.ForgotPasswordLabel);
             this.Controls.Add(this.PasswordBox);
             this.Controls.Add(this.EmailBox);

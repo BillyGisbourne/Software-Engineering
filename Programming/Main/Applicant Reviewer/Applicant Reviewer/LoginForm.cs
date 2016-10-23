@@ -9,7 +9,6 @@ namespace Applicant_Reviewer
     public partial class LoginForm : MetroForm
     {
         private string forgotPassLink = "http://www.google.com/";
-        private int userRights = 3;
 
         public LoginForm()
         {
@@ -44,7 +43,7 @@ namespace Applicant_Reviewer
         private void LoginButton_Click(object sender, EventArgs e)
         {
             LoginProcessor newLoginAttempt = new LoginProcessor();
-            newLoginAttempt.Login(EmailBox.Text, PasswordBox.Text, userRights);
+            newLoginAttempt.Login(EmailBox.Text, PasswordBox.Text);
         }
 
         /// <summary>
@@ -56,7 +55,7 @@ namespace Applicant_Reviewer
         {
             Application.Exit();
         }
-        
+                
         private void RandomStyle()
         {
             int randomNumber;
