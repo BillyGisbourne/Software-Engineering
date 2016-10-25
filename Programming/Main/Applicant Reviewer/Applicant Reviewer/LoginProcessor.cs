@@ -59,7 +59,7 @@ namespace Applicant_Reviewer
                         }
                         else
                         {
-                            MessageBox.Show("Username or Password is incorrect.");
+                            MessageBox.Show("Email or Password is incorrect.");
                             correctLogin = false;
                         }
                     }
@@ -70,7 +70,7 @@ namespace Applicant_Reviewer
                 }
             }
             else
-                MessageBox.Show("Please enter both a valid username, and password");
+                MessageBox.Show("Please enter both a valid email, and password");
             return correctLogin;
         }
 
@@ -105,7 +105,7 @@ namespace Applicant_Reviewer
             
             try
             {
-                //Regex expression that checks a match between entered username and the expression (a-zA-Z0-9_-.@a-zA-Z0-9.a-zA-Z
+                //Regex expression that checks a match between entered username and the expression that has the following scheme (a-zA-Z0-9_-.@a-zA-Z0-9.a-zA-Z)
                 return Regex.IsMatch(email,
                       @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
                       @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",
@@ -150,6 +150,7 @@ namespace Applicant_Reviewer
         {
             switch (userRights)
             {
+                default:
                 case 0:
                     MessageBox.Show("You don't have permission to view this.");
                     break;

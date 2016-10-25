@@ -11,15 +11,12 @@ namespace Applicant_Reviewer
     {
         internal void Logout()
         {
-            //Settings.Reset();
-            //Textboxes.Empty();
-
             DialogResult newDialog = MessageBox.Show("Are you sure you want to log out?", "Logout", MessageBoxButtons.YesNo);
             if (newDialog == DialogResult.Yes)
             {
                 var LoginForm = new LoginForm();
 
-                PositionOptions.ActiveForm.Hide();
+                PositionOptions.ActiveForm.Dispose();
                 LoginForm.BringToFront();
                 LoginForm.Show();
             }

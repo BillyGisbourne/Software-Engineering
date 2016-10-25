@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{AEAE72E8-E445-492A-A4FA-464D74E30E01}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Applicant_Reviewer</RootNamespace>
     <AssemblyName>Applicant Reviewer</AssemblyName>
@@ -77,6 +77,12 @@
     <Compile Include="BackgroundForm.Designer.cs">
       <DependentUpon>BackgroundForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreatePositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatePositionForm.Designer.cs">
+      <DependentUpon>CreatePositionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,8 +117,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>userDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ViewPositionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewPositionsForm.Designer.cs">
+      <DependentUpon>ViewPositionsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="BackgroundForm.resx">
       <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatePositionForm.resx">
+      <DependentUpon>CreatePositionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -129,6 +144,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ViewPositionsForm.resx">
+      <DependentUpon>ViewPositionsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

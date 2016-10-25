@@ -33,7 +33,6 @@ namespace Applicant_Reviewer
             this.LoginButton = new MetroFramework.Controls.MetroButton();
             this.EmailBox = new MetroFramework.Controls.MetroTextBox();
             this.PasswordBox = new MetroFramework.Controls.MetroTextBox();
-            this.ForgotPasswordLabel = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
             // LoginButton
@@ -69,30 +68,12 @@ namespace Applicant_Reviewer
             this.PasswordBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.PasswordBox.UseSystemPasswordChar = true;
             // 
-            // ForgotPasswordLabel
-            // 
-            this.ForgotPasswordLabel.AutoSize = true;
-            this.ForgotPasswordLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ForgotPasswordLabel.CustomBackground = true;
-            this.ForgotPasswordLabel.CustomForeColor = true;
-            this.ForgotPasswordLabel.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.ForgotPasswordLabel.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.ForgotPasswordLabel.Location = new System.Drawing.Point(164, 121);
-            this.ForgotPasswordLabel.Margin = new System.Windows.Forms.Padding(0);
-            this.ForgotPasswordLabel.Name = "ForgotPasswordLabel";
-            this.ForgotPasswordLabel.Size = new System.Drawing.Size(98, 15);
-            this.ForgotPasswordLabel.TabIndex = 2;
-            this.ForgotPasswordLabel.Text = "Forgot Password?";
-            this.ForgotPasswordLabel.UseStyleColors = true;
-            this.ForgotPasswordLabel.Click += new System.EventHandler(this.ForgotPasswordLabel_Click);
-            // 
             // LoginForm
             // 
             this.AcceptButton = this.LoginButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(285, 185);
-            this.Controls.Add(this.ForgotPasswordLabel);
             this.Controls.Add(this.PasswordBox);
             this.Controls.Add(this.EmailBox);
             this.Controls.Add(this.LoginButton);
@@ -103,7 +84,6 @@ namespace Applicant_Reviewer
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -111,7 +91,6 @@ namespace Applicant_Reviewer
         private MetroFramework.Controls.MetroButton LoginButton;
         private MetroFramework.Controls.MetroTextBox EmailBox;
         private MetroFramework.Controls.MetroTextBox PasswordBox;
-        private MetroFramework.Controls.MetroLabel ForgotPasswordLabel;
     }
 }
 

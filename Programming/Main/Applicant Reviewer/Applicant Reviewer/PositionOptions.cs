@@ -9,11 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Applicant_Reviewer
 {
     public partial class PositionOptions : MetroForm
     {
+        private string tempFile = Environment.SpecialFolder.MyComputer.ToString() + @"/temp.txt";
+
         public PositionOptions()
         {
             InitializeComponent();
@@ -38,6 +41,8 @@ namespace Applicant_Reviewer
                     showRole.Text += "Admin";
                     break;
             }
+
+            SavePreviousUser();
         }
 
         internal void CheckVisible(int rights)
@@ -56,13 +61,17 @@ namespace Applicant_Reviewer
         private void CreatePositionsBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Create");
-            Application.Exit();
+            CreatePositionForm newCreate = new CreatePositionForm();
+            newCreate.Show();
+            Visible = false;
         }
 
         private void ViewPositionsBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("View");
-            Application.Exit();
+            ViewPositionsForm newView = new ViewPositionsForm();
+            newView.Show();
+            Visible = false;
         }
 
         private void PositionOptions_FormClosing(object sender, FormClosingEventArgs e)
@@ -75,6 +84,23 @@ namespace Applicant_Reviewer
             var newLogout = new LogoutProcessor();
 
             newLogout.Logout();
+        }
+
+        private void PositionOptions_Load(object sender, EventArgs e)
+        {
+        }
+
+        internal void SavePreviousUser()
+        {
+
+            File.WriteAllText(tempFile,showUser.Text + Environment.NewLine + showRole.Text);
+        }
+
+        internal void LoadPreviousUser()
+        {
+            string[] userData = File.ReadAllLines(tempFile);
+            showUser.Text = userData[0];
+            showRole.Text = userData[1];
         }
     }
 }

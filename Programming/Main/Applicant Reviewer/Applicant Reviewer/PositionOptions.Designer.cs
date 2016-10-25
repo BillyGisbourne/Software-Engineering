@@ -1,4 +1,6 @@
-﻿namespace Applicant_Reviewer
+﻿using System;
+
+namespace Applicant_Reviewer
 {
     partial class PositionOptions
     {
@@ -96,6 +98,7 @@
             this.Name = "PositionOptions";
             this.Resizable = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PositionOptions_FormClosing);
+            this.Load += new System.EventHandler(this.PositionOptions_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

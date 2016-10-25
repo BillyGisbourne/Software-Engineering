@@ -16,7 +16,7 @@ namespace Applicant_Reviewer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BackgroundForm());
+            Application.Run(new ViewPositionsForm());
         }
     }
 }

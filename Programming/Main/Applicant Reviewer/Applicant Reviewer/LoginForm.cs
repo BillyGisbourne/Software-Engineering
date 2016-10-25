@@ -40,7 +40,12 @@ namespace Applicant_Reviewer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void LoginButton_Click(object sender, EventArgs e)
+        internal void LoginButton_Click(object sender, EventArgs e)
+        {
+            NewLogin();
+        }
+
+        internal void NewLogin()
         {
             LoginProcessor newLoginAttempt = new LoginProcessor();
             newLoginAttempt.Login(EmailBox.Text, PasswordBox.Text);
@@ -55,7 +60,7 @@ namespace Applicant_Reviewer
         {
             Application.Exit();
         }
-                
+
         private void RandomStyle()
         {
             int randomNumber;
